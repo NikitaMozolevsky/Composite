@@ -4,12 +4,16 @@ import by.mozolevskij.composite.entity.TextComponent;
 import by.mozolevskij.composite.entity.TextComponentType;
 import by.mozolevskij.composite.entity.TextComposite;
 import by.mozolevskij.composite.exception.CustomException;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
 public class ParagraphParserTest {
+    public static final Logger logger = LogManager.getLogger();
     TextComponent component;
     TextComponent component2;
     AbstractParser parser;
@@ -31,7 +35,6 @@ public class ParagraphParserTest {
         parser.parse(text2, component2);
         String actual = component.toString();
         String expected = component2.toString();
-
         assertEquals(actual, expected);
 
     }

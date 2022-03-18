@@ -20,17 +20,24 @@ public class TextComposite implements TextComponent {
         components.add(componentType);
     }
 
+    public ArrayList<TextComponent> getChildComponentsList() {
+        return new ArrayList<>(components);
+    }
+
     public void removeComponent(TextComponent textComponent) {
         components.remove(textComponent);
     }
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("TextComposite{");
-        sb.append("textComponentType=").append(textComponentType);
-        sb.append(", components=").append(components);
-        sb.append('}');
-        return sb.toString();
+        StringBuilder stringBuilder = new StringBuilder();
+        for (TextComponent component:
+             components) {
+            stringBuilder.append(textComponentType.getPrefix());
+            stringBuilder.append(component);
+            stringBuilder.append(textComponentType.getPostfix());
+        }
+        return stringBuilder.toString();
     }
 
     @Override

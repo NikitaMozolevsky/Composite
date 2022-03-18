@@ -5,6 +5,8 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Collection;
+
 public class TextLeaf implements TextComponent {
 
     static final Logger logger = LogManager.getLogger();
@@ -36,6 +38,11 @@ public class TextLeaf implements TextComponent {
         throw new UnsupportedOperationException();
     }
 
+    @Override
+    public Collection<TextComponent> getChildComponentsList() {
+        return null;
+    }
+
 
     @Override
     public boolean equals(Object o) {
@@ -57,10 +64,6 @@ public class TextLeaf implements TextComponent {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("TextLeaf{");
-        sb.append("character=").append(character);
-        sb.append(", textComponentType=").append(textComponentType);
-        sb.append('}');
-        return sb.toString();
+        return String.valueOf(character);
     }
 }

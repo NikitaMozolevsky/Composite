@@ -5,6 +5,8 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Collection;
+
 public interface TextComponent {
 
     static final Logger logger = LogManager.getLogger();
@@ -12,4 +14,6 @@ public interface TextComponent {
     void addComponent(TextComponent component) throws CustomException;
 
     void removeComponent(TextComponent component) throws CustomException;
+
+    Collection<TextComponent> getChildComponentsList();
 }
