@@ -5,7 +5,7 @@ import by.mozolevskij.composite.entity.TextComponentType;
 import by.mozolevskij.composite.entity.TextComposite;
 import by.mozolevskij.composite.exception.CustomException;
 import by.mozolevskij.composite.parser.ParagraphParser;
-import by.mozolevskij.composite.service.impl.ServiceMethodsImpl;
+import by.mozolevskij.composite.service.impl.ServiceTextImpl;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,7 +22,7 @@ public class Main {
     public static void main(String[] args) throws CustomException {
         TextComponent component = new TextComposite(TextComponentType.TEXT);
         ParagraphParser parser = new ParagraphParser();
-        ServiceMethodsImpl.getInstance().findSentencesWithTheLongestWord(text1);
+        /*ServiceTextImpl.getInstance().findSentencesWithTheLongestWord(text1);*/
         parser.parse(text1, component);
         System.out.println(component);
         logger.log(Level.INFO, component.toString());

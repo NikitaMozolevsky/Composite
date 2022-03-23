@@ -16,4 +16,6 @@ public interface TextComponent {
     void removeComponent(TextComponent component) throws CustomException;
 
     Collection<TextComponent> getChildComponentsList();
+
+    TextComponentType getTextComponentType();
 }
